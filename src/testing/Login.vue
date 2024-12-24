@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('/path/to/background.jpg');">
+  <div class="h-screen flex items-center justify-center">
     <div class="bg-white p-6 rounded-lg shadow-md w-80">
       <h2 class="text-center text-lg font-bold mb-4">Connexion</h2>
       <form>

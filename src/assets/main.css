@@ -33,3 +33,44 @@ a,
     padding: 0 2rem;
   }
 }
+
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('./assets/fonts/Anonymous_Pro/AnonymousPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('/assets/Anonymous_Pro/AnonymousPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('/assets/Anonymous_Pro/AnonymousPro-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('/assets/Anonymous_Pro/AnonymousPro-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+body {
+  background-image: url('/assets/background.jpg');;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
