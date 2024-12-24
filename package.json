@@ -2,10 +2,9 @@
   "name": "frontend-vue",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
+    "dev": "vite",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,8 +13,11 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/cli-plugin-typescript": "~5.0.0",
+    "@vue/cli-service": "^5.0.8",
     "tailwindcss": "^3.4.17",
+    "typescript": "~4.5.5",
     "vite": "^6.0.1",
     "vite-plugin-vue-devtools": "^7.6.5"
-  }
+  },
+  "type": "module"
 }
