@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.svg" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
     <Login /> <!-- Ton nouveau composant -->
+    <div class="bg-red-500 text-white p-4">
+      Test Tailwind CSS
+    </div>
+
   </div>
 </template>
 
