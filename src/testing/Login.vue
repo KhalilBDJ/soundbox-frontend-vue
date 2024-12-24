@@ -7,7 +7,7 @@
       <h2 class="text-center text-lg font-bold mb-4">Connexion</h2>
       <form>
         <div class="mb-4">
-          <label for="email" class="block text-sm font-semibold mb-1">Adresse email</label>
+          <label for="email" class="block text-sm font-italic mb-1">Adresse email</label>
           <input
               id="email"
               type="email"

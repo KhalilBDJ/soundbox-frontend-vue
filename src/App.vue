@@ -1,9 +1,6 @@
 <template>
   <div id="app">
     <Login /> <!-- Ton nouveau composant -->
-    <div class="bg-red-500 text-white p-4">
-      Test Tailwind CSS
-    </div>
 
   </div>
 </template>
