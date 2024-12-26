@@ -1,7 +1,6 @@
 <template>
-  <div id="app">
+  <div id="app" class="bg-custom-bg bg-cover bg-center ">
     <Login /> <!-- Ton nouveau composant -->
-
   </div>
 </template>
 

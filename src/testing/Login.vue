@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="h-screen flex items-center justify-center bg-custom-bg bg-cover bg-center font-anonymous">
+  <div class="h-screen flex items-center justify-center font-anonymous">
     <div class="bg-white p-6 rounded-lg shadow-md w-80">
       <h2 class="text-center text-lg font-bold mb-4">Connexion</h2>
       <form>
