@@ -6,8 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
-import Login from './testing/Login.vue'; // Chemin vers le composant
+import Login from './components/Login.vue'; // Chemin vers le composant
 
 export default defineComponent({
   name: 'App',

@@ -7,12 +7,12 @@
       <h2 class="text-center text-lg font-bold mb-4">Connexion</h2>
       <form>
         <div class="mb-4">
-          <label for="email" class="block text-sm font-italic mb-1">Adresse email</label>
+          <label for="email" class="block text-sm font-bold italic mb-1">Adresse email</label>
           <input
               id="email"
               type="email"
               placeholder="Entrez votre email"
-              class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+              class="w-full px-3 py-2 border rounded-md italic focus:outline-none focus:ring focus:ring-blue-300"
           />
         </div>
         <div class="mb-6">
@@ -21,7 +21,7 @@
               id="password"
               type="password"
               placeholder="Entrez votre mot de passe"
-              class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+              class="w-full px-3 py-2 border rounded-md italic focus:outline-none focus:ring focus:ring-blue-300"
           />
         </div>
         <button
@@ -38,6 +38,3 @@
   </div>
 </template>
 
-<style scoped>
-/* Supprime l'importation Google Fonts, car Tailwind gère la police Anonymous Pro */
-</style>
