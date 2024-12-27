@@ -31,9 +31,12 @@
           Se connecter
         </button>
       </form>
-      <p class="text-center text-sm text-gray-600 mt-4">
-        Pas encore de compte ? <a href="#" class="text-teal-500 hover:underline">S'inscrire</a>
-      </p>
+      <div class="mt-4 text-center">
+        <span class="text-gray-600">Pas encore de compte ?</span>
+        <router-link to="/register" class="text-[#048098] font-semibold hover:underline transition">
+          S'inscrire
+        </router-link>
+      </div>
     </div>
   </div>
 </template>

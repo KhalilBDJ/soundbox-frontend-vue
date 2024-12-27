@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="bg-custom-bg bg-cover bg-center ">
-    <Login /> <!-- Ton nouveau composant -->
+  <div id="app" >
+    <router-view /> <!-- Ton nouveau composant -->
   </div>
 </template>
 
