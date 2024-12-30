@@ -7,7 +7,7 @@
       <h2 class="text-center text-lg font-bold mb-4">Connexion</h2>
       <form>
         <div class="mb-4">
-          <label for="email" class="ext-black text-xl font-semibold font-anonymous block mb-2">Adresse email</label>
+          <label for="email" class="text-black text-xl font-semibold font-anonymous block mb-2">Adresse email</label>
           <input
               id="email"
               type="email"
@@ -16,7 +16,7 @@
           />
         </div>
         <div class="mb-6">
-          <label for="password" class="ext-black text-xl font-semibold font-anonymous block mb-2">Mot de passe</label>
+          <label for="password" class="text-black text-xl font-semibold font-anonymous block mb-2">Mot de passe</label>
           <input
               id="password"
               type="password"
