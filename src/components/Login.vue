@@ -7,7 +7,7 @@
       <h2 class="text-center text-lg font-bold mb-4">Connexion</h2>
       <form>
         <div class="mb-4">
-          <label for="email" class="block text-sm font-bold italic mb-1">Adresse email</label>
+          <label for="email" class="ext-black text-xl font-semibold font-anonymous block mb-2">Adresse email</label>
           <input
               id="email"
               type="email"
@@ -16,7 +16,7 @@
           />
         </div>
         <div class="mb-6">
-          <label for="password" class="block text-sm font-semibold mb-1">Mot de passe</label>
+          <label for="password" class="ext-black text-xl font-semibold font-anonymous block mb-2">Mot de passe</label>
           <input
               id="password"
               type="password"
@@ -26,7 +26,7 @@
         </div>
         <button
             type="submit"
-            class="w-full bg-teal-500 text-white py-2 px-4 rounded-md hover:bg-teal-600 transition"
+            class="w-full bg-[#73B3BC] text-white py-2 rounded-md hover:bg-[#048098] transition text-xl font-semibold font-anonymous text-center"
         >
           Se connecter
         </button>
