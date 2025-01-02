@@ -98,8 +98,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import AudioSpectrum from '../audio-spectrum/AudioSpectrum.vue';
-import { useSoundService } from '../service/sound.service';
+import { useSoundService } from '@/service/sound.service';
+import AudioSpectrum from "@/components/AudioSpectrum.vue";
 
 const isPopupVisible = ref(false);
 const isPopupFadingOut = ref(false);

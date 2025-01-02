@@ -16,7 +16,7 @@ export default defineComponent({
   emits: ['modify-clicked'],
   methods: {
     onClick(): void {
-      this.$emit('modify-clicked'); // Émet l'événement vers le parent
+      this.$emit('modify-clicked');
     }
   }
 });

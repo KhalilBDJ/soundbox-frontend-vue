@@ -8,9 +8,9 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import PlayButton from '../../buttons/play-button/PlayButton.vue';
-import ModifyButton from '../buttons/ModifyButton.vue';
-import DownloadButton from '../../buttons/download-button/DownloadButton.vue';
+import PlayButton from "@/components/buttons/PlayButton.vue";
+import ModifyButton from "@/components/buttons/ModifyButton.vue";
+import DownloadButton from "@/components/buttons/DownloadButton.vue";
 import { Sound } from '@/service/sound.service'
 
 export default defineComponent({

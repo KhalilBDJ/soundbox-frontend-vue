@@ -3,21 +3,21 @@
       class="bg-[#D9D9D9] bg-opacity-0 rounded-[90px] border-[10px] border-white w-full max-w-[calc(100%-200px)] h-[80vh] mx-[100px] p-20 overflow-auto mb-20"
   >
     <div class="flex flex-wrap gap-x-20 gap-y-20 justify-start items-start w-full">
-      <BoxComponent
+      <box
           v-for="sound in sounds"
           :key="sound.id"
           :sound="sound"
           @soundDeleted="onSoundDeleted"
       />
-      <AddSoundBoxComponent @soundAdded="onSoundAdded" />
+      <AddSoundBox @soundAdded="onSoundAdded" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import BoxComponent from '../../box/BoxComponent.vue';
-import AddSoundBoxComponent from '../../add-sound-box/AddSoundBoxComponent.vue';
+import Box from "@/components/Box.vue";
+import AddSoundBox from "@/components/AddSoundBox.vue";
 import { useSoundService, type Sound } from '@/service/sound.service';
 
 const sounds = ref<Sound[]>([]);

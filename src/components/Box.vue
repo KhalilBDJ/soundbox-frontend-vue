@@ -6,7 +6,7 @@
     </span>
 
     <!-- Boutons horizontaux -->
-    <HorizontalButtonsLayout
+    <HorizontalLayout
         :sound="sound"
         @modifyClicked="openEditPopup"
     />
@@ -56,9 +56,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import HorizontalButtonsLayout from '../layouts/HorizontalButtonsLayout.vue';
+import HorizontalLayout from "@/components/layouts/HorizontalLayout.vue";
 import { useSoundService } from '@/service/sound.service';
 import type { Sound } from '@/service/sound.service';
+import HorizontalButtonsLayout from "@/components/layouts/HorizontalLayout.vue";
 
 interface Props {
   sound: Sound;

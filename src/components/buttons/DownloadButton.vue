@@ -18,14 +18,12 @@ interface Sound {
 
 const props = defineProps<{ sound: Sound }>();
 
-// Fonction locale pour télécharger le son
 const downloadSound = (): void => {
   if (!props.sound || !props.sound.data) {
     console.error('Aucune donnée à télécharger pour ce son.');
     return;
   }
 
-  // Convertir la chaîne Base64 en Blob
   const byteString = atob(props.sound.data);
   const arrayBuffer = new ArrayBuffer(byteString.length);
   const uint8Array = new Uint8Array(arrayBuffer);
@@ -36,14 +34,12 @@ const downloadSound = (): void => {
 
   const blob = new Blob([uint8Array], { type: 'audio/mpeg' });
 
-  // Créer un lien de téléchargement temporaire
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
   a.download = `${props.sound.name}.mp3`;
   a.click();
 
-  // Révoquer l'URL pour éviter les fuites de mémoire
   URL.revokeObjectURL(url);
 };
 </script>

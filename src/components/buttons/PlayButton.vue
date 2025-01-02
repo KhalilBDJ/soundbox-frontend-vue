@@ -27,10 +27,8 @@ export default defineComponent({
       }
 
       try {
-        // Convert Base64 to ArrayBuffer
         const arrayBuffer = this.base64ToArrayBuffer(this.soundData);
 
-        // Play the audio
         const context = new AudioContext();
         const buffer = await context.decodeAudioData(arrayBuffer);
         const source = context.createBufferSource();
