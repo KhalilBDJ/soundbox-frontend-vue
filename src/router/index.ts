@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Login from "../components/Login.vue";
-import Register from "../components/Register.vue";
+import Login from "@/components/Login.vue";
+import Register from "@/components/Register.vue";
 import Home from "@/vue/Home.vue";
 import OptVerification from "@/components/OptVerification.vue";
+import {useAuthGuard} from "@/components/guard/AuthGuard";
 
 const routes: Array<RouteRecordRaw> = [
     { path: "/", name: "Login", component: Login },
@@ -12,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
         name: 'home',
         component: Home,
         beforeEnter: (to, from, next) => {
-            if (canActivate()) {
+            if (useAuthGuard().canActivate()) {
                 next();
             } else {
                 next('/');

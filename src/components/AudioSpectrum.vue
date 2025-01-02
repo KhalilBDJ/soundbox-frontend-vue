@@ -41,9 +41,10 @@ interface RegionChangeEvent {
   end: number;
 }
 
-const audioBlob = ref<Blob | null>(null); // Passer l'audio en prop si besoin
 const zoomLevel = ref(0);
 const regionChange = ref<RegionChangeEvent | null>(null);
+
+const props = defineProps<{ audioBlob: Blob | null }>();
 
 let waveSurfer: WaveSurfer | null = null;
 
@@ -57,8 +58,8 @@ onMounted(() => {
     ]
   });
 
-  if (audioBlob.value) {
-    waveSurfer.loadBlob(audioBlob.value);
+  if (props.audioBlob) {
+    waveSurfer.loadBlob(props.audioBlob);
   }
 
   waveSurfer.on('ready', () => {

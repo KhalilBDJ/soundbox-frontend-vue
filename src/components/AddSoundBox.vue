@@ -109,11 +109,11 @@ const tiktokUrl = ref('');
 const selectedFile = ref<File | null>(null);
 const soundName = ref('');
 const showAudioSpectrum = ref(false);
-const audioBlob = ref<Blob | null>(null);
 const audioName = ref('');
 const regionStart = ref(0);
 const regionEnd = ref(0);
 const duration = ref(0);
+const audioBlob = ref<Blob | null>(null); // Déclarez audioBlob comme une variable locale
 
 const { getYouTubePreview, getInstagramPreview, getTikTokPreview, trimAndUploadSound, uploadSoundBytes } = useSoundService();
 

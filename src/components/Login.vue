@@ -85,7 +85,7 @@ const onLogin = async () => {
     try {
       await authService.sendOtp(email.value);
       alert('Un code OTP a été envoyé à votre adresse e-mail.');
-      router.push({ name: 'verify-otp', query: { email: email.value } });
+      await router.push({name: 'OptVerification', query: {email: email.value}});
     } catch (error) {
       errorMessage.value = "Erreur lors de l'envoi de l'OTP.";
     }

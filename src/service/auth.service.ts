@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import axios from 'axios';
+import axiosInstace from 'axios';
 import type { AxiosResponse } from 'axios';
 
 interface LoginRequestDTO {
@@ -27,7 +27,7 @@ export function useAuthService() {
     // Méthode de connexion
     const login = async (credentials: LoginRequestDTO): Promise<LoginResponseDTO> => {
         try {
-            const response: AxiosResponse<LoginResponseDTO> = await axios.post(`${apiUrl}/login`, credentials);
+            const response: AxiosResponse<LoginResponseDTO> = await axiosInstace.post(`${apiUrl}/login`, credentials);
 
             // Stocke temporairement les infos utilisateur dans localStorage
             localStorage.setItem('tempUserId', response.data.userId.toString());
@@ -44,7 +44,7 @@ export function useAuthService() {
     // Méthode d'inscription
     const register = async (registerData: any): Promise<any> => {
         try {
-            const response: AxiosResponse<any> = await axios.post(`${apiUrl}/register`, registerData);
+            const response: AxiosResponse<any> = await axiosInstace.post(`${apiUrl}/register`, registerData);
             console.log('User registered successfully:', response.data);
             return response.data;
         } catch (error) {
@@ -55,7 +55,7 @@ export function useAuthService() {
 
     const verifyOtp = async (email: string, otp: string): Promise<OtpResponse> => {
         try {
-            const response: AxiosResponse<OtpResponse> = await axios.post(`${apiUrl}/verify-otp`, { email, otp });
+            const response: AxiosResponse<OtpResponse> = await axiosInstace.post(`${apiUrl}/verify-otp`, { email, otp });
 
             // Remplace les infos temporaires par le token définitif
             localStorage.setItem('authToken', response.data.jwtToken);
@@ -76,7 +76,7 @@ export function useAuthService() {
 
     const sendOtp = async (email: string): Promise<void> => {
         try {
-            await axios.post(`${apiUrl}/send-otp`, { email });
+            await axiosInstace.post(`${apiUrl}/send-otp`, { email });
         } catch (error) {
             console.error('Send OTP error:', error);
             throw error;

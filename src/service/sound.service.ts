@@ -1,5 +1,6 @@
-import axios from 'axios';
+import axiosInstance from 'axios';
 import type { AxiosResponse } from 'axios';
+import axiosInstance from "@/interceptor/JwtInterceptor";
 
 export interface Sound {
     id: number;
@@ -13,7 +14,7 @@ export function useSoundService() {
 
     const getUserSounds = async (): Promise<Sound[]> => {
         try {
-            const response: AxiosResponse<Sound[]> = await axios.get(`${apiUrl}/user/me`);
+            const response: AxiosResponse<Sound[]> = await axiosInstance.get(`${apiUrl}/user/me`);
             return response.data;
         } catch (error) {
             console.error('Error fetching user sounds:', error);
@@ -23,7 +24,7 @@ export function useSoundService() {
 
     const uploadSoundFromYouTube = async (youtubeUrl: string, name: string): Promise<{ message: string; name: string }> => {
         try {
-            const response: AxiosResponse<{ message: string; name: string }> = await axios.post(`${apiUrl}/user/youtube`, null, {
+            const response: AxiosResponse<{ message: string; name: string }> = await axiosInstance.post(`${apiUrl}/user/youtube`, null, {
                 params: { url: youtubeUrl, name },
             });
             return response.data;
@@ -35,7 +36,7 @@ export function useSoundService() {
 
     const getInstagramPreview = async (instagramUrl: string): Promise<{ audioBlob: Blob; name: string; duration: number }> => {
         try {
-            const response: AxiosResponse<{ name: string; duration: number; audioData: string }> = await axios.post(
+            const response: AxiosResponse<{ name: string; duration: number; audioData: string }> = await axiosInstance.post(
                 `${apiUrl}/user/instagram/preview`,
                 null,
                 { params: { url: instagramUrl } }
@@ -49,7 +50,7 @@ export function useSoundService() {
 
     const getTikTokPreview = async (tiktokUrl: string): Promise<{ audioBlob: Blob; name: string; duration: number }> => {
         try {
-            const response: AxiosResponse<{ name: string; duration: number; audioData: string }> = await axios.post(
+            const response: AxiosResponse<{ name: string; duration: number; audioData: string }> = await axiosInstance.post(
                 `${apiUrl}/user/tiktok/preview`,
                 null,
                 { params: { url: tiktokUrl } }
@@ -63,7 +64,7 @@ export function useSoundService() {
 
     const uploadSoundFileToUser = async (formData: FormData): Promise<string> => {
         try {
-            const response: AxiosResponse<string> = await axios.post(`${apiUrl}/user/`, formData);
+            const response: AxiosResponse<string> = await axiosInstance.post(`${apiUrl}/user/`, formData);
             return response.data;
         } catch (error) {
             console.error('Error uploading sound file:', error);
@@ -73,7 +74,7 @@ export function useSoundService() {
 
     const updateSoundName = async (soundId: number, newName: string): Promise<void> => {
         try {
-            await axios.put(`${apiUrl}/user/${soundId}`, { name: newName });
+            await axiosInstance.put(`${apiUrl}/user/${soundId}`, { name: newName });
         } catch (error) {
             console.error('Error updating sound name:', error);
             throw error;
@@ -82,7 +83,7 @@ export function useSoundService() {
 
     const deleteSound = async (soundId: number): Promise<void> => {
         try {
-            await axios.delete(`${apiUrl}/${soundId}`);
+            await axiosInstance.delete(`${apiUrl}/${soundId}`);
         } catch (error) {
             console.error('Error deleting sound:', error);
             throw error;
@@ -91,7 +92,7 @@ export function useSoundService() {
 
     const getYouTubePreview = async (youtubeUrl: string): Promise<{ audioBlob: Blob; name: string; duration: number }> => {
         try {
-            const response: AxiosResponse<{ name: string; duration: number; audioData: string }> = await axios.post(
+            const response: AxiosResponse<{ name: string; duration: number; audioData: string }> = await axiosInstance.post(
                 `${apiUrl}/user/youtube/preview`,
                 null,
                 { params: { url: youtubeUrl } }
@@ -109,7 +110,7 @@ export function useSoundService() {
         end: number
     ): Promise<{ trimmed_audio_base64: string }> => {
         try {
-            const response: AxiosResponse<{ trimmed_audio_base64: string }> = await axios.post(`${apiUrl}/trim`, {
+            const response: AxiosResponse<{ trimmed_audio_base64: string }> = await axiosInstance.post(`${apiUrl}/trim`, {
                 audioBase64,
                 start,
                 end,
@@ -125,7 +126,7 @@ export function useSoundService() {
         soundData: { data: string; name: string; duration: number }
     ): Promise<{ message: string; name: string }> => {
         try {
-            const response: AxiosResponse<{ message: string; name: string }> = await axios.post(`${apiUrl}/user/bytes`, soundData, {
+            const response: AxiosResponse<{ message: string; name: string }> = await axiosInstance.post(`${apiUrl}/user/bytes`, soundData, {
                 headers: { 'Content-Type': 'application/json' },
             });
             return response.data;
