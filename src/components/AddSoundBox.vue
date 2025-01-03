@@ -71,10 +71,10 @@
         </button>
       </div>
 
-      <div v-if="showAudioSpectrum" class="w-full">
+      <div v-if="showAudioSpectrum" class="w-full h-full">
         <AudioSpectrum
             :audioBlob="audioBlob"
-            @regionChange="onRegionChange"
+            @regionChange="updateRegion"
         />
 
         <div class="mt-4 flex space-x-4">
@@ -210,9 +210,9 @@ const prepareLocalFilePreview = (finalName: string) => {
   showAudioSpectrum.value = true;
 };
 
-const onRegionChange = (region: { start: number; end: number }) => {
-  regionStart.value = region.start;
-  regionEnd.value = region.end;
+const updateRegion = ({ start, end }: { start: number; end: number }) => {
+  regionStart.value = start;
+  regionEnd.value = end;
 };
 
 const saveTrimmedSound = async () => {

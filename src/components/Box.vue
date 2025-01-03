@@ -45,7 +45,7 @@
         </button>
         <button
             class="px-4 py-2 bg-red-700 text-white rounded-md shadow-md hover:bg-red-800"
-            @click="deleteSound"
+            @click="deleteSoundAction"
         >
           Supprimer
         </button>

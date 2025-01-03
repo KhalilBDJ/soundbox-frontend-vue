@@ -1,4 +1,3 @@
-import axiosInstance from 'axios';
 import type { AxiosResponse } from 'axios';
 import axiosInstance from "@/interceptor/JwtInterceptor";
 

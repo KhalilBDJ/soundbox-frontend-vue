@@ -1,5 +1,5 @@
 <template>
-  <div id="waveform" class="w-full bg-gray-100 border border-gray-300 shadow-md rounded-md"></div>
+  <div id="waveform" class="w-full bg-gray border border-gray-300 shadow-md rounded-md"></div>
 
   <div class="flex items-center mt-4 space-x-4">
     <!-- Bouton Play Region -->
@@ -36,15 +36,12 @@ import { ref, onMounted } from 'vue';
 import WaveSurfer from 'wavesurfer.js';
 import RegionsPlugin from 'wavesurfer.js/src/plugin/regions';
 
-interface RegionChangeEvent {
-  start: number;
-  end: number;
-}
+
 
 const zoomLevel = ref(0);
-const regionChange = ref<RegionChangeEvent | null>(null);
 
 const props = defineProps<{ audioBlob: Blob | null }>();
+const emit = defineEmits(["regionChange"]);
 
 let waveSurfer: WaveSurfer | null = null;
 
@@ -68,7 +65,7 @@ onMounted(() => {
 
   waveSurfer.on('region-update-end', (region: any) => {
     console.log('Region updated:', region.start, region.end);
-    regionChange.value = { start: region.start, end: region.end };
+    emit('regionChange', { start: region.start, end: region.end });
   });
 });
 
@@ -123,7 +120,5 @@ const zoom = () => {
 </script>
 
 <style scoped>
-#waveform {
-  height: 100px;
-}
+
 </style>
